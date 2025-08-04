@@ -1,0 +1,12 @@
+{
+  "short_name": "Saad Portfolio",
+  "name": "Saad Bin Ather - Portfolio",
+  "description": "Full-Stack Developer & CS Student Portfolio",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#3b82f6",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary"
+}
+ 
