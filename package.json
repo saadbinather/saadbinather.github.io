@@ -5,12 +5,22 @@
   "homepage": "https://saadbinather.github.io",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.263.1",
+    "nodemailer": "^7.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.5.2",
     "react-scripts": "5.0.1"
+  },
+  "serverDependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,7 +28,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "server": "node server.js",
+    "dev": "concurrently \"npm run start\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
@@ -40,8 +52,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
+    "gh-pages": "^6.0.0",
     "postcss": "^8.4.28",
-    "tailwindcss": "^3.3.3",
-    "gh-pages": "^6.0.0"
+    "tailwindcss": "^3.3.3"
   }
 }

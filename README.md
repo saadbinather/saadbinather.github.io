@@ -1,179 +1,107 @@
-# Saad Bin Ather - Portfolio Website
+# Saad Bin Ather - Portfolio
 
-A modern, responsive portfolio website built with React, showcasing my journey as a full-stack developer and CS student. Features smooth animations, dark mode support, and a sleek design.
+A responsive, dark-mode portfolio website built with React, Tailwind CSS, and Framer Motion.
 
-## 🚀 Features
+## Features
 
-- **Responsive Design** - Looks great on all devices
-- **Dark Mode Toggle** - Seamless light/dark theme switching
-- **Smooth Animations** - Powered by Framer Motion
-- **Interactive UI** - Hover effects and micro-interactions
-- **Contact Form** - Functional contact form (frontend ready)
-- **Performance Optimized** - Fast loading and smooth scrolling
-- **SEO Friendly** - Proper meta tags and semantic HTML
+- 🎨 Dark mode with smooth animations
+- 📱 Fully responsive design
+- ✉️ Contact form with Nodemailer backend
+- 🚀 Deployed on GitHub Pages
 
-## 🛠️ Tech Stack
+## Setup Instructions
 
-- **Frontend**: React 18, JavaScript ES6+
-- **Styling**: Tailwind CSS, Custom CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Build Tool**: Create React App
-- **Deployment**: Ready for Vercel/Netlify
-
-## 🎨 Sections
-
-1. **Hero** - Introduction with call-to-action buttons
-2. **About** - Personal introduction and highlights
-3. **Skills** - Technical skills organized by categories
-4. **Experience** - Work experience and internships
-5. **Projects** - Showcase of notable projects with filters
-6. **Certifications** - Academic achievements and certifications
-7. **Contact** - Contact form and social links
-
-## 📦 Installation & Setup
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Steps
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/saadbinather/portfolio.git
-   cd portfolio
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Start development server**
-
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
-
-4. **Open in browser**
-   - Visit `http://localhost:3000`
-   - The app will automatically reload when you make changes
-
-### Build for Production
+### 1. Frontend Setup
 
 ```bash
-npm run build
-# or
-yarn build
+# Install dependencies
+npm install
+
+# Start development server
+npm start
 ```
 
-This creates a `build` folder with optimized production files.
+### 2. Backend Setup (Email Functionality)
 
-## 🎯 Customization
+#### Step 1: Gmail App Password Setup
 
-### Colors & Branding
+1. Go to your Google Account settings
+2. Enable 2-Factor Authentication if not already enabled
+3. Go to Security → App passwords
+4. Generate a new app password for "Mail"
+5. Copy the generated password
 
-- Edit `tailwind.config.js` to customize the color scheme
-- Update the primary colors in the `extend.colors` section
+#### Step 2: Environment Variables
 
-### Content
+1. Open the `.env` file in your project root
+2. Replace the placeholder values:
 
-- Update personal information in each component file
-- Modify project data in `src/components/Projects.js`
-- Update skills in `src/components/Skills.js`
+```env
+EMAIL_USER=your-gmail@gmail.com
+EMAIL_PASS=your-gmail-app-password
+```
 
-### Animations
+**Important:** Use your actual Gmail address and the app password you generated, NOT your regular Gmail password.
 
-- Customize animations in component files using Framer Motion
-- Adjust animation timing and effects as needed
+#### Step 3: Start the Backend Server
 
-## 📱 Responsive Breakpoints
+```bash
+# Start the backend server (in a separate terminal)
+npm run server
 
-- **Mobile**: < 640px
-- **Tablet**: 640px - 1024px
-- **Desktop**: > 1024px
+# Or run both frontend and backend together
+npm run dev
+```
 
-## 🌙 Dark Mode
+### 3. Deployment
 
-The website includes a sophisticated dark mode implementation:
+```bash
+# Deploy to GitHub Pages
+npm run deploy
+```
 
-- Automatic detection of system preference
-- Manual toggle with smooth transitions
-- Persistent user preference storage
-- Optimized for both light and dark themes
+## Project Structure
 
-## 🔗 Deployment
+```
+portfolio/
+├── src/
+│   ├── components/     # React components
+│   ├── App.js         # Main app component
+│   └── index.css      # Global styles
+├── public/            # Static assets
+├── server.js          # Express backend with Nodemailer
+├── .env              # Environment variables
+└── package.json      # Dependencies and scripts
+```
 
-### Vercel (Recommended)
+## Contact Form
 
-1. Push code to GitHub
-2. Connect GitHub repo to Vercel
-3. Deploy with default settings
+The contact form now uses a custom backend with Nodemailer to send emails directly to `saadbinatherr@gmail.com`. When someone submits the form:
 
-### Netlify
+1. The message is sent to your Gmail address
+2. You receive a beautifully formatted HTML email
+3. The form shows a success message to the user
 
-1. Build the project: `npm run build`
-2. Deploy the `build` folder to Netlify
-3. Configure any necessary redirects
+## Technologies Used
 
-### Manual Deployment
+- **Frontend:** React, Tailwind CSS, Framer Motion, Lucide React
+- **Backend:** Express.js, Nodemailer
+- **Deployment:** GitHub Pages
 
-1. Run `npm run build`
-2. Upload the `build` folder contents to your web server
+## Troubleshooting
 
-## 📧 Contact Form
+### Email Not Sending
 
-The contact form is ready for backend integration. To make it functional:
+- Check that your Gmail app password is correct
+- Ensure 2-Factor Authentication is enabled
+- Verify the `.env` file has the correct credentials
+- Check that the backend server is running on port 5000
 
-1. **Backend Integration**
+### CORS Issues
 
-   - Set up a backend endpoint (Node.js/Express, PHP, etc.)
-   - Handle form submissions and email sending
-   - Add proper validation and security measures
+- The backend includes CORS middleware to allow requests from the frontend
+- If you're still having issues, check that both servers are running
 
-2. **Third-party Services**
+## License
 
-   - Use services like Formspree, Netlify Forms, or EmailJS
-   - Update the form action/endpoint in `Contact.js`
-
-3. **Environment Variables**
-   - Add API keys and endpoints to `.env` file
-   - Update form submission logic accordingly
-
-## 🧑‍💻 About the Developer
-
-**Saad Bin Ather**
-
-- 2nd-year Computer Science Student at FAST NUCES Lahore
-- Full-Stack Developer with expertise in React, Next.js, Node.js
-- Passionate about AI applications and modern web development
-
-**Connect with me:**
-
-- 📧 Email: saadbinather@gmail.com
-- 💼 LinkedIn: [saad-bin-ather](https://www.linkedin.com/in/saad-bin-ather-b11b2b313/)
-- 🐱 GitHub: [saadbinather](https://github.com/saadbinather)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio! If you make improvements, I'd love to see them.
-
-## ⭐ Show Your Support
-
-If you like this portfolio template, please give it a star! It helps me know that people find it useful.
-
----
-
-**Built with ❤️ and ☕ by Saad Bin Ather**
+MIT License
